@@ -29,7 +29,7 @@ class AppLayout extends Component
             'dashboard' => [
                 'icon' => 'home',
                 'title' => 'Dashboard',
-                'route_name' => 'dashboard',
+                'route_name' => 'admin.dashboard',
             ],
             'user' => [
                 'icon' => 'user',

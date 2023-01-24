@@ -41,70 +41,24 @@
         <!--button Start-->
         <ul class="mb-0 list-none buy-button">
             <li class="inline mb-0">
-                <a href="{{ '//' . get_static_option('fb_url') }}" target="_blank">
-                    <div class="login-btn-primary">
-                        <span
-                            class="text-white bg-indigo-600 border-indigo-600 rounded-full btn btn-icon hover:bg-indigo-700 hover:border-indigo-700">
-                            <i data-feather="facebook" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                    <div class="login-btn-light">
-                        <span
-                            class="rounded-full btn btn-icon bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700">
-                            <i data-feather="facebook" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                </a>
-            </li>
-            <li class="inline mb-0">
-                <a href="{{ '//' . get_static_option('instagram_url') }}" target="_blank">
-                    <div class="login-btn-primary">
-                        <span
-                            class="text-white bg-red-600 border-red-600 rounded-full btn btn-icon logo-instagram hover:bg-red-700 hover:border-red-700">
-                            <i data-feather="instagram" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                    <div class="login-btn-light">
-                        <span
-                            class="rounded-full btn btn-icon logo-instagram bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700">
-                            <i data-feather="instagram" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                </a>
-            </li>
-            <li class="inline mb-0">
-                <a href="{{ '//' . get_static_option('twitter_url') }}" target="_blank">
-                    <div class="login-btn-primary">
-                        <span
-                            class="text-white rounded-full btn btn-icon bg-sky-600 hover:bg-sky-700 border-sky-600 hover:border-sky-700">
-                            <i data-feather="twitter" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                    <div class="login-btn-light">
-                        <span
-                            class="rounded-full btn btn-icon bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700">
-                            <i data-feather="twitter" class="w-6 h-6"></i>
-                        </span>
-                    </div>
-                </a>
+                <div class="inline">
+                    Langauge : <select onchange="changeLanguage(this.value)">
+                        <option
+                            {{ session()->has('lang_code') ? (session()->get('lang_code') == 'en' ? 'selected' : '') : '' }}
+                            value="en">English</option>
+                        <option
+                            {{ session()->has('lang_code') ? (session()->get('lang_code') == 'ar' ? 'selected' : '') : '' }}
+                            value="ar">Arabic</option>
+                        <option
+                            {{ session()->has('lang_code') ? (session()->get('lang_code') == 'te' ? 'selected' : '') : '' }}
+                            value="te">Telugu</option>
+                    </select>
+                </div>
             </li>
         </ul>
         <!-- button End-->
 
         <div id="navigation">
-            <div>
-                Langauge : <select onchange="changeLanguage(this.value)">
-                    <option
-                        {{ session()->has('lang_code') ? (session()->get('lang_code') == 'en' ? 'selected' : '') : '' }}
-                        value="en">English</option>
-                    <option
-                        {{ session()->has('lang_code') ? (session()->get('lang_code') == 'ar' ? 'selected' : '') : '' }}
-                        value="ar">Arabic</option>
-                    <option
-                        {{ session()->has('lang_code') ? (session()->get('lang_code') == 'te' ? 'selected' : '') : '' }}
-                        value="te">Telugu</option>
-                </select>
-            </div>
             <!-- Navigation Menu-->
             <ul class="navigation-menu nav-light">
 

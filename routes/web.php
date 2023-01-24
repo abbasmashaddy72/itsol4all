@@ -17,21 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend URL
 Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
-    Route::get('/', 'FrontendController@index')->name('homepage');
+    Route::get('/change-language/{lang}', [LanguageController::class, 'changeLanguage']);
+    Route::get('', 'FrontendController@index')->name('homepage');
+    Route::get('projects', 'FrontendController@projects')->name('projects');
+    Route::get('projectSingle', 'FrontendController@projectSingle')->name('projectSingle');
+    Route::get('aboutUs', 'FrontendController@aboutUs')->name('aboutUs');
+    Route::get('contactUs', 'FrontendController@contactUs')->name('contactUs');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web', 'auth', 'verified'], 'namespace' => 'App\Http\Controllers\Backend'], function () {
-    Route::resource('role', RoleController::class); // Role List
-    Route::resource('user', UserController::class); // User List
-});
-Route::get('/change-language/{lang}', [LanguageController::class, 'changeLanguage']);
+    Route::get('/dashboard', function () {
+        view()->share('title', 'Dashboard');
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('role', [RoleController::class, 'index'])->name('role.index');
+    Route::get('user', [UserController::class, 'index'])->name('user.index');
 
-Route::get('/dashboard', function () {
-    view()->share('title', 'Dashboard');
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

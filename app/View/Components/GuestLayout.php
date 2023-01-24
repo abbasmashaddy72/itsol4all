@@ -31,6 +31,18 @@ class GuestLayout extends Component
                 'title' => 'Home',
                 'route_name' => 'homepage',
             ],
+            'projects' => [
+                'title' => 'Projects',
+                'route_name' => 'projects',
+            ],
+            'aboutUs' => [
+                'title' => 'About Us',
+                'route_name' => 'aboutUs',
+            ],
+            'contactUs' => [
+                'title' => 'Contact Us',
+                'route_name' => 'contactUs',
+            ],
         ];
     }
 
