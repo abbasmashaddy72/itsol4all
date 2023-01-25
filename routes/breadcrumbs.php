@@ -24,3 +24,33 @@ Breadcrumbs::for('role.index', function (BreadcrumbTrail $trail) {
     $trail->parent('#');
     $trail->push('Role', route('admin.role.index'));
 });
+
+// Application > Home
+Breadcrumbs::for('static.home', function (BreadcrumbTrail $trail) {
+    $trail->parent('#');
+    $trail->push('Home', route('admin.static.home'));
+});
+
+// Application > About Us
+Breadcrumbs::for('static.aboutUs', function (BreadcrumbTrail $trail) {
+    $trail->parent('#');
+    $trail->push('About Us', route('admin.static.aboutUs'));
+});
+
+// Application > Contact Us
+Breadcrumbs::for('static.contactUs', function (BreadcrumbTrail $trail) {
+    $trail->parent('#');
+    $trail->push('Contact Us', route('admin.static.contactUs'));
+});
+
+// Application > Projects
+Breadcrumbs::for('projects.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('#');
+    $trail->push('Projects', route('admin.projects.index'));
+});
+
+// Application > Services
+Breadcrumbs::for('services.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('#');
+    $trail->push('Services', route('admin.services.index'));
+});

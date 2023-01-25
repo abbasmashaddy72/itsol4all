@@ -1,6 +1,6 @@
 <x-backend.modal-form form-action="add">
     <x-slot name="title">
-        @if (!empty($this->role_id))
+        @if (!empty($this->project_id))
             Update
         @else
             Save
@@ -9,12 +9,12 @@
 
     <x-slot name="content">
         <div class="grid gap-y-2">
-            <x-input name="name" label="Name" type="text" wire:model='name' />
+            <x-input name="title" label="Title" type="text" wire:model='title' />
 
-            @foreach ($permissions as $permission)
-                <x-checkbox id="{{ $permission->slug }}" label="{{ $permission->name }}"
-                    wire:model='permissions_array.{{ $permission->id }}' />
-            @endforeach
+            <x-textarea name="excerpt" label="Excerpt" type="text" wire:model='excerpt' />
+
+            <input name="image" type="file" wire:model="image" rules="mimes:jpeg,png" />
+
         </div>
     </x-slot>
 

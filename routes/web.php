@@ -30,8 +30,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web', 'au
         view()->share('title', 'Dashboard');
         return view('dashboard');
     })->name('dashboard');
-    Route::get('role', [RoleController::class, 'index'])->name('role.index');
-    Route::get('user', [UserController::class, 'index'])->name('user.index');
+    Route::get('role', 'RoleController@index')->name('role.index');
+    Route::get('user', 'UserController@index')->name('user.index');
+    Route::get('project', 'ProjectController@index')->name('projects.index');
+    Route::get('service', 'ServiceController@index')->name('services.index');
+
+    Route::get('home', 'StaticPageController@home')->name('static.home');
+    Route::get('aboutUs', 'StaticPageController@aboutUs')->name('static.aboutUs');
+    Route::get('contactUs', 'StaticPageController@contactUs')->name('static.contactUs');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

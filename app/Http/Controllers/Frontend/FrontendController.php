@@ -3,13 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('pages.frontend.index');
+        $services = Service::get();
+
+        return view('pages.frontend.index', compact('services'));
     }
 
     public function projects()
@@ -29,8 +34,9 @@ class FrontendController extends Controller
     public function aboutUs()
     {
         view()->share('title', 'About Us');
+        $teams = User::get();
 
-        return view('pages.frontend.aboutUs');
+        return view('pages.frontend.aboutUs', compact('teams'));
     }
 
     public function contactUs()

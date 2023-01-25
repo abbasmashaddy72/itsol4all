@@ -17,6 +17,6 @@
     @endif
 </div>
 
-<div class="grid grid-cols-12 gap-5 mt-5">
+<div class="w-full">
     {{ $slot }}
 </div>

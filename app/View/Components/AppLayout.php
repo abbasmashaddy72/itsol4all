@@ -31,6 +31,31 @@ class AppLayout extends Component
                 'title' => 'Dashboard',
                 'route_name' => 'admin.dashboard',
             ],
+            'home' => [
+                'icon' => 'shopping-bag',
+                'title' => 'Home',
+                'route_name' => 'admin.static.home',
+            ],
+            'aboutUs' => [
+                'icon' => 'tag',
+                'title' => 'About Us',
+                'route_name' => 'admin.static.aboutUs',
+            ],
+            'contactUs' => [
+                'icon' => 'share-2',
+                'title' => 'Contact Us',
+                'route_name' => 'admin.static.contactUs',
+            ],
+            'project' => [
+                'icon' => 'folder-plus',
+                'title' => 'Projects',
+                'route_name' => 'admin.projects.index',
+            ],
+            'service' => [
+                'icon' => 'globe',
+                'title' => 'Services',
+                'route_name' => 'admin.services.index',
+            ],
             'user' => [
                 'icon' => 'user',
                 'title' => 'Users',

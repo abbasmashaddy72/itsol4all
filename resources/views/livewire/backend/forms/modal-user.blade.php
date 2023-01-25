@@ -1,6 +1,10 @@
 <x-backend.modal-form form-action="add">
     <x-slot name="title">
-        Update {{ $name }}
+        @if (!empty($this->user_id))
+            Update
+        @else
+            Save
+        @endif
     </x-slot>
 
     <x-slot name="content">
