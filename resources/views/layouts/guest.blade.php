@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="{{ asset('temp/images/logo.svg') }}" rel="shortcut icon" type="image/svg+xml">
+    <link href="{{ get_static_option('favicon') }}" rel="shortcut icon" type="image/svg+xml">
 
     <title>
         @if (\Route::currentRouteName() != 'homepage')

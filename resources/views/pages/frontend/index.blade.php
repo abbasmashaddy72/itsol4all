@@ -19,7 +19,7 @@
                 <!--end col-->
 
                 <div class="mt-8 lg:col-span-5 md:mt-0">
-                    <img src="{{ get_static_option('image') }}" alt="" />
+                    <img src="{{ get_static_option('home_image') }}" alt="" />
                 </div>
                 <!--end col-->
             </div>
