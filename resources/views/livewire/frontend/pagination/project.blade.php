@@ -6,7 +6,8 @@
                     <div class="relative">
                         <div
                             class="p-5 pb-0 rounded-md shadow dark:shadow-gray-800 bg-indigo-600/5 dark:bg-indigo-600/30">
-                            <img src="{{ $item->getFirstMediaUrl() }}" class="shadow rounded-t-md" alt="">
+                            <img src="{{ asset('storage/' . $item->getFirstMediaUrl()) }}" class="shadow rounded-t-md"
+                                alt="">
                         </div>
                     </div>
 
